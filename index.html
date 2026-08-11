@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个人名片</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    animation: fadeIn 0.6s ease;
+    border: 1px solid #f0f0f0;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 50px 24px 70px;
+    text-align: center;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    object-fit: cover;
+    object-position: center top;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .name {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .tag {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .bio {
+    padding: 0 32px;
+    margin-top: -40px;
+    position: relative;
+    background: #ffffff;
+    padding-top: 32px;
+  }
+
+  .bio p {
+    color: #4a5568;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: center;
+  }
+
+  .divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin: 24px 32px;
+  }
+
+  .contact {
+    padding: 0 32px 32px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    transition: background 0.2s ease;
+  }
+
+  .contact-item:hover {
+    background: #f7fafc;
+  }
+
+  .contact-item svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 14px;
+    color: #667eea;
+  }
+
+  .contact-label {
+    color: #2d3748;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: auto;
+  }
+
+  .contact-value {
+    color: #718096;
+    font-size: 13px;
+  }
+
+  @media (max-width: 480px) {
+    .header { padding: 40px 20px 60px; }
+    .avatar { width: 100px; height: 100px; }
+    .name { font-size: 22px; }
+    .bio, .contact { padding-left: 24px; padding-right: 24px; }
+    .divider { margin-left: 24px; margin-right: 24px; }
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <img class="avatar" src="https://picsum.photos/seed/random01/200/200" alt="头像">
+      <div class="name">林小雅</div>
+      <span class="tag">UI / UX DESIGNER</span>
+    </div>
+
+    <div class="bio">
+      <p>
+        一个热爱设计与生活的创造者。相信美好的设计源于对细节的打磨，用像素讲述故事，用色彩传递情感。
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="contact">
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+        </svg>
+        <span class="contact-label">微信</span>
+        <span class="contact-value">linya_design</span>
+      </div>
+
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span class="contact-label">邮箱</span>
+        <span class="contact-value">linya@design.com</span>
+      </div>
+
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        <span class="contact-label">电话</span>
+        <span class="contact-value">137 2266 8899</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
